@@ -1,0 +1,4 @@
+Is there any special concept or service when you tried to develop with {{$input}}.
+For example:
+In Azure, there is concept subscription, resource group, service is used to organize the resource and in AWS, there is concept ARN
+In Azure, there is some special resource like cosmosDB, service bus, storage account and AAD
