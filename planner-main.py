@@ -19,21 +19,7 @@ kernel.add_chat_service("chart",AzureChatCompletion(deployment, endpoint, api_ke
 chat_functions = kernel.import_semantic_skill_from_directory("./prompt", "windup")
 
 async def chat() -> bool:
-
-    # try:
-    #     user_input = input("What platform do you want to migrate:> ")
-
-    # except KeyboardInterrupt:
-    #     print("\n\nExiting chat...")
-    #     return False
-    # except EOFError:
-    #     print("\n\nExiting chat...")
-    #     return False
-
-    # if user_input == "exit":
-    #     print("\n\nExiting chat...")
-    #     return False
-    
+   
     planner = BasicPlanner()
     plan = await planner.create_plan_async(windupaskTemplate, kernel)
     print(plan.generated_plan.result)

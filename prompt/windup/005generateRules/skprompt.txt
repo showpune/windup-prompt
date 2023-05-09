@@ -1,0 +1,5 @@
+Generate the all the possible windup rules to assess the java code to check if {{$platform}} is used. Give me the windup rules with xml format directly.
+The rules should cover
+1) To check in java code if the specific package or API is used
+2) To check  in the code and configuration file any special concept or resource type for {{$platform}} is found
+3) To check if {{$platform}} command line is used in code
