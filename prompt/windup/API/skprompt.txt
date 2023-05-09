@@ -1,1 +1,0 @@
-What special package name will you import when you develop with {{$input}} by Java? Summary the package name regex pattern.

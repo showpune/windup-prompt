@@ -1,0 +1,1 @@
+Generate the all the possible windup rules to access the java code, to check if {{$platform}} is used. Give me the rule with xml format directly.

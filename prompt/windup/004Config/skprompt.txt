@@ -1,0 +1,3 @@
+When to develop the Java code in {{$platform}}, what the resource configuration will looks like in the configuration files? List all the possible regex pattern for the resource configuration in short. There are some explaination for the configration files:
+1) The configuration file normally will be with format properties, yaml or xml.
+2) The resources in the configuration files will include connection string to access message, db, storage, olap and any other resources can be used in the code

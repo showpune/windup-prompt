@@ -1,0 +1,1 @@
+Is there any special concept or resource type when you tried to develop with {{$platform}}，list the concept or resource type in short without explaination, start with "There is special concept and resource type in {{$platform}}"

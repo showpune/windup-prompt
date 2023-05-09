@@ -1,4 +1,0 @@
-When to develop with {{$input}} to access the {{$input}} resource, we will use configuration file to define the resources
-The configuration file normally will be with format properties, yaml or xml.
-The resource will include connection string to access message, db, storage, olap and any other resources can be used in the code
-What the resource definition will looks like in configuration for {{$input}} service? Summary all the possible regex pattern for the resource configuration when to use {{$input}} service
