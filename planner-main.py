@@ -24,6 +24,7 @@ async def chat() -> bool:
     plan = await planner.create_plan_async(windupaskTemplate, kernel)
     print(plan.generated_plan.result)
     results = await planner.execute_plan_async(plan, kernel)
+    print("Generated rules by Sematical Kernal:")
     print(results);
     return True
 
