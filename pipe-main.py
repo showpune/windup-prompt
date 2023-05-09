@@ -22,7 +22,7 @@ chat_prompts = import_chat_skill_from_directory("./prompt", "windup")
 async def chat() -> bool:
 
     try:
-        user_input = input("What platform do you want to migrate:> ")
+        user_input = input("What platform do you want to migrate (AWS, Azure, GCP):> ")
     except KeyboardInterrupt:
         print("\n\nExiting chat...")
         return False
@@ -44,7 +44,7 @@ async def chat() -> bool:
         prompt_template = sk.ChatPromptTemplate(
             "{{$user_input}}", kernel.prompt_template_engine, prompt_config
         )
-        # prompt_template.add_system_message(import_prompt("./prompt/chat/system.txt"));
+        # prompt_template.add_system_message(import_prompt("./prompt/system.txt"));
         prompt_template.add_user_message(chat_prompt);
         for assist in assists:
             prompt_template.add_assistant_message(assist)
@@ -55,9 +55,9 @@ async def chat() -> bool:
         
         answer = await generateRule.invoke_async(variables=context_variables)
         print(f"{name}:> {answer}")
+        print("\n")
         assists.append(f"{answer}")
 
-    print(f"Rules:> {answer}")
     return True
 
 

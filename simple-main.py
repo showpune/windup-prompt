@@ -15,7 +15,7 @@ kernel.add_chat_service("chart",AzureChatCompletion(deployment, endpoint, api_ke
 async def chat() -> bool:
 
     try:
-        user_input = input("What platform do you want to migrate:> ")
+        user_input = input("What platform do you want to migrate (AWS, Azure, GCP):> ")
     except KeyboardInterrupt:
         print("\n\nExiting chat...")
         return False
@@ -35,7 +35,7 @@ async def chat() -> bool:
     prompt_template = sk.ChatPromptTemplate(
         import_prompt("./prompt/chat/ask.txt"), kernel.prompt_template_engine, prompt_config
     )
-    prompt_template.add_system_message(import_prompt("./prompt/chat/system.txt"));
+    prompt_template.add_system_message(import_prompt("./prompt/system.txt"));
     function_config = sk.SemanticFunctionConfig(prompt_config, prompt_template)
 
     generateRule = kernel.register_semantic_function(
