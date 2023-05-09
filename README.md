@@ -1,4 +1,9 @@
 # windup-prompt: generate the windup rules by open AI
+## Introduce
+Three way to use OpenAI to generate windup rules
+1) By chat with system prompt
+2) A sequence of asks to get more context, make the result more precise
+3) Use sematical kernal to make the ask plan to generate the rule
 
 ## Installation
 1. Configration the connection to open AI
