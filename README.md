@@ -10,7 +10,7 @@ Three way to use OpenAI to generate windup rules
 ```
 cp .env-sample .env
 ```
-Config the connection string to azure open ai service, to create the azure open ai service, check [link](https://portal.azure.com/#create/Microsoft.CognitiveServicesOpenAI) 
+Config the connection string to azure open ai service, to create the azure open ai service and get the configuration, check [link](https://github.com/showpune/windup-prompt/blob/master/how-to.md)) 
 
 Install the requirements
 ```
