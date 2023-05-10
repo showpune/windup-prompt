@@ -2,17 +2,22 @@
 
 import asyncio
 import semantic_kernel as sk
-from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
+from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion,OpenAIChatCompletion
 from util import import_chat_skill_from_directory,import_prompt
 
 
 kernel = sk.Kernel()
 
+useAzureOpenAI = True
 
-deployment, api_key, endpoint = sk.azure_openai_settings_from_dot_env()
-
-kernel.add_chat_service("chart",AzureChatCompletion(deployment, endpoint, api_key))
-
+# Configure AI service used by the kernel
+if useAzureOpenAI:
+    deployment, api_key, endpoint = sk.azure_openai_settings_from_dot_env()
+    kernel.add_chat_service("chart",AzureChatCompletion(deployment, endpoint, api_key))
+else:
+    api_key, org_id = sk.openai_settings_from_dot_env()
+    kernel.add_text_completion_service("chart", OpenAIChatCompletion("text-davinci-003", api_key, org_id))
+    
 prompt_config = sk.PromptTemplateConfig.from_completion_parameters(
             max_tokens=2000, temperature=0.5, top_p=0.8
 )
